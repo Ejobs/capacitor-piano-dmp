@@ -13,25 +13,50 @@ npx cap sync
 
 <docgen-index>
 
-* [`echo(...)`](#echo)
+* [`sendPageView(...)`](#sendpageview)
+* [Interfaces](#interfaces)
+* [Type Aliases](#type-aliases)
 
 </docgen-index>
 
 <docgen-api>
 <!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
 
-### echo(...)
+### sendPageView(...)
 
 ```typescript
-echo(options: { value: string; }) => Promise<{ value: string; }>
+sendPageView(options: PageViewOptions) => Promise<void>
 ```
 
-| Param         | Type                            |
-| ------------- | ------------------------------- |
-| **`options`** | <code>{ value: string; }</code> |
+Send a pageview event. Pageview events are aggregated by Piano Insight. All collected pageview events are available 
+for analysis in Insight's web interface.
 
-**Returns:** <code>Promise&lt;{ value: string; }&gt;</code>
+| Param         | Type                                                        |
+| ------------- | ----------------------------------------------------------- |
+| **`options`** | <code><a href="#pageviewoptions">PageViewOptions</a></code> |
 
 --------------------
+
+
+### Interfaces
+
+
+#### PageViewOptions
+
+| Prop               | Type                                                            |
+| ------------------ | --------------------------------------------------------------- |
+| **`location`**     | <code>string</code>                                             |
+| **`userParams`**   | <code><a href="#record">Record</a>&lt;string, string&gt;</code> |
+| **`customParams`** | <code><a href="#record">Record</a>&lt;string, string&gt;</code> |
+
+
+### Type Aliases
+
+
+#### Record
+
+Construct a type with a set of properties K of type T
+
+<code>{ [P in K]: T; }</code>
 
 </docgen-api>

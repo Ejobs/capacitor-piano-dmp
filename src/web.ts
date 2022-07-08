@@ -1,10 +1,10 @@
 import { WebPlugin } from '@capacitor/core';
 
-import type { PianoDmpPlugin } from './definitions';
+import type { PageViewOptions, PianoDmpPlugin } from './definitions';
 
 export class PianoDmpWeb extends WebPlugin implements PianoDmpPlugin {
-  async echo(options: { value: string }): Promise<{ value: string }> {
-    console.log('ECHO', options);
-    return options;
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  async sendPageView(_options: PageViewOptions): Promise<void> {
+    throw new Error('Not implemented on web')
   }
 }
