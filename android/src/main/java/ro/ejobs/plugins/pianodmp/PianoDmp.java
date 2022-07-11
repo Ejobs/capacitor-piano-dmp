@@ -1,8 +1,6 @@
 package ro.ejobs.plugins.pianodmp;
 
 import android.util.Log;
-import com.cxense.cxensesdk.CredentialsProvider;
-import com.cxense.cxensesdk.CxenseConfiguration;
 import com.cxense.cxensesdk.CxenseSdk;
 import com.cxense.cxensesdk.model.PageViewEvent;
 import com.getcapacitor.JSObject;
@@ -11,25 +9,10 @@ import com.getcapacitor.PluginConfig;
 import java.util.Iterator;
 
 public class PianoDmp {
-
-    CxenseConfiguration cxConfig = CxenseSdk.getInstance().getConfiguration();
-
     public void sendPageView(PluginCall call, PluginConfig config) {
         String siteId = config.getString("siteId");
         if (siteId == null || siteId == "") {
             call.reject("Missing required siteId param");
-            return;
-        }
-
-        String pianoUsername = config.getString("username");
-        if (pianoUsername == null || pianoUsername == "") {
-            call.reject("Missing required username param");
-            return;
-        }
-
-        String pianoApiKey = config.getString("apiKey");
-        if (pianoApiKey == null || pianoApiKey == "") {
-            call.reject("Missing required api key param");
             return;
         }
 
@@ -40,20 +23,6 @@ public class PianoDmp {
         }
 
         try {
-            cxConfig.setCredentialsProvider(
-                new CredentialsProvider() {
-                    @Override
-                    public String getUsername() {
-                        return pianoUsername;
-                    }
-
-                    @Override
-                    public String getApiKey() {
-                        return pianoApiKey;
-                    }
-                }
-            );
-
             String location = call.getString("location");
             builder.setLocation(location);
 
