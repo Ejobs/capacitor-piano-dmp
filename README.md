@@ -9,6 +9,14 @@ npm install capacitor-piano-dmp
 npx cap sync
 ```
 
+# Android
+Add the following line to AndroidManifest.xml
+
+```xml
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+```
+# iOS
+
 ## API
 
 <docgen-index>
@@ -28,7 +36,7 @@ npx cap sync
 sendPageView(options: PageViewOptions) => Promise<void>
 ```
 
-Send a pageview event. Pageview events are aggregated by Piano Insight. All collected pageview events are available 
+Send a pageview event. Pageview events are aggregated by Piano Insight. All collected pageview events are available
 for analysis in Insight's web interface.
 
 | Param         | Type                                                        |
