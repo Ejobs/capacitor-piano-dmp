@@ -9,6 +9,7 @@ import com.getcapacitor.PluginConfig;
 import java.util.Iterator;
 
 public class PianoDmp {
+
     public void sendPageView(PluginCall call, PluginConfig config) {
         String siteId = config.getString("siteId");
         if (siteId == null || siteId == "") {
