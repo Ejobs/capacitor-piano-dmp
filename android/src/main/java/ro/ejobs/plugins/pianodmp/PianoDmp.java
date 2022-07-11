@@ -16,13 +16,13 @@ public class PianoDmp {
             return;
         }
 
-        PageViewEvent.Builder builder = new PageViewEvent.Builder(siteId);
         if (!call.getData().has("location")) {
             call.reject("Missing required location parameter");
             return;
         }
 
         try {
+            PageViewEvent.Builder builder = new PageViewEvent.Builder(siteId);
             String location = call.getString("location");
             builder.setLocation(location);
 
