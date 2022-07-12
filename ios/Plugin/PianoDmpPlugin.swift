@@ -29,12 +29,6 @@ public class PianoDmpPlugin: CAPPlugin {
             return
         }
 
-        let location = call.getString("location") ?? ""
-        if location == nil || location == "" {
-            call.reject("Missing required location parameter")
-            return
-        }
-
-        implementation.sendPageView(call, siteId: siteId ?? "", location: location ?? "")
+        implementation.sendPageView(call, siteId: siteId ?? "")
     }
 }
