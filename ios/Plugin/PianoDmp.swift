@@ -6,12 +6,12 @@ import CxenseSDK
     @objc public func sendPageView(_ call: CAPPluginCall, siteId: String) {
         do {
             let location = call.getString("location") ?? ""
-            
+
             if location == "" {
                 call.reject("Missing required location parameter")
                 return
             }
-            
+
             let builder = PageViewEventBuilder.makeBuilder(withName: "PageView", siteId: siteId)
                 .setLocation(loc: location)
             for (key, paramRaw) in call.getObject("userParams", JSObject.init()) {
@@ -24,10 +24,10 @@ import CxenseSDK
                     _ = builder.addCustomParameter(forKey: key, withValue: param)
                 }
             }
-            
+
             Cxense.reportEvent(try builder.build())
             print("Logged piano event for location: \(location)")
-            
+
             call.resolve()
         } catch {
             print("Error occured while transmiting piano event")
