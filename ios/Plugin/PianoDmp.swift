@@ -26,11 +26,10 @@ import CxenseSDK
             }
 
             Cxense.reportEvent(try builder.build())
-            print("Logged piano event for location: \(location)")
-
             call.resolve()
         } catch {
-            print("Error occured while transmiting piano event")
+            NSLog("Error occured while transmiting piano event")
+            
             let messageIntro = "Sending piano event failed."
             switch error {
             case IncorrectConfiguration.valueRequired(let cause):
