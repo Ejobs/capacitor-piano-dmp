@@ -1,6 +1,6 @@
 # capacitor-piano-dmp
 
-Piano Dmp integration for Capacitor JS
+Piano Dmp integration for Capacitor JS. For now it supports only sendPageView events.
 
 ## Install
 
@@ -16,6 +16,7 @@ Add the following line to AndroidManifest.xml
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
 ```
 # iOS
+No changes are needed on iOS
 
 ## API
 
@@ -65,6 +66,8 @@ for analysis in Insight's web interface.
 
 Construct a type with a set of properties K of type T
 
-<code>{ [P in K]: T; }</code>
+<code>{
+ [P in K]: T;
+ }</code>
 
 </docgen-api>
