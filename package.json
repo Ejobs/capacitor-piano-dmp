@@ -1,6 +1,6 @@
 {
   "name": "capacitor-piano-dmp",
-  "version": "4.0.1",
+  "version": "4.0.2",
   "description": "Piano Dmp integration for Capacitor JS",
   "main": "dist/plugin.cjs.js",
   "module": "dist/esm/index.js",
